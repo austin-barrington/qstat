@@ -8,6 +8,8 @@
 #define QSTAT_UTILS_H
 
 #ifndef _WIN32
+ #include <err.h>
+ #include <sysexits.h>
  #include "gnuconfig.h"
 #endif
 
@@ -39,6 +41,10 @@
 
 #ifndef EX_OSERR
 	#define EX_OSERR    71  /* system error (e.g., can't fork) */
+#endif
+
+#ifndef EX_SOFTWARE
+	#define EX_SOFTWARE 70 /* An internal software error has been detected */
 #endif
 
 #if !HAVE_ERR_H
